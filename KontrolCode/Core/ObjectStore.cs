@@ -216,7 +216,8 @@ public class ObjectStore
             throw new InvalidDataException("Invalid author line: missing timestamp");
 
         var timestamp = long.Parse(parts[0]);
-        var timezone = parts[1];
+        // parts[1] is the timezone offset; not currently stored on Author.
+        _ = parts[1];
 
         var when = DateTimeOffset.FromUnixTimeSeconds(timestamp);
 
