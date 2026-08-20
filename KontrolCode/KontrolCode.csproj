@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <OutputType>Exe</OutputType>
+    <AssemblyName>KontrolCode</AssemblyName>
+    <RootNamespace>KontrolCode</RootNamespace>
   </PropertyGroup>
 
 </Project>

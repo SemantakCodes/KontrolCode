@@ -1,4 +1,4 @@
-namespace KodeControl.Core;
+namespace KontrolCode.Core;
 
 public class RefStore
 {
@@ -10,7 +10,7 @@ public class RefStore
     {
         get
         {
-            var headPath = Path.Combine(_repoPath, ".kodecontrol", "HEAD");
+            var headPath = Path.Combine(_repoPath, ".kontrolcode", "HEAD");
             if (!File.Exists(headPath))
             {
                 return "ref: refs/heads/main";
@@ -19,7 +19,7 @@ public class RefStore
         }
         private set
         {
-            var headPath = Path.Combine(_repoPath, ".kodecontrol", "HEAD");
+            var headPath = Path.Combine(_repoPath, ".kontrolcode", "HEAD");
             File.WriteAllText(headPath, value);
         }
     }
@@ -27,7 +27,7 @@ public class RefStore
     public RefStore(string repoPath)
     {
         _repoPath = repoPath;
-        var refsDir = Path.Combine(_repoPath, ".kodecontrol", "refs");
+        var refsDir = Path.Combine(_repoPath, ".kontrolcode", "refs");
         Directory.CreateDirectory(Path.Combine(refsDir, "heads"));
         Directory.CreateDirectory(Path.Combine(refsDir, "tags"));
     }
@@ -57,7 +57,7 @@ public class RefStore
 
     public string? GetBranch(string name)
     {
-        var branchPath = Path.Combine(_repoPath, ".kodecontrol", "refs", "heads", name);
+        var branchPath = Path.Combine(_repoPath, ".kontrolcode", "refs", "heads", name);
         if (!File.Exists(branchPath))
         {
             return null;
@@ -67,14 +67,14 @@ public class RefStore
 
     public void SetBranch(string name, string hash)
     {
-        var branchPath = Path.Combine(_repoPath, ".kodecontrol", "refs", "heads", name);
+        var branchPath = Path.Combine(_repoPath, ".kontrolcode", "refs", "heads", name);
         File.WriteAllText(branchPath, hash);
     }
 
     public Dictionary<string, string> GetAllBranches()
     {
         var branches = new Dictionary<string, string>();
-        var headsDir = Path.Combine(_repoPath, ".kodecontrol", "refs", "heads");
+        var headsDir = Path.Combine(_repoPath, ".kontrolcode", "refs", "heads");
         if (!Directory.Exists(headsDir))
         {
             return branches;
@@ -90,13 +90,13 @@ public class RefStore
 
     public void CreateTag(string name, string hash)
     {
-        var tagPath = Path.Combine(_repoPath, ".kodecontrol", "refs", "tags", name);
+        var tagPath = Path.Combine(_repoPath, ".kontrolcode", "refs", "tags", name);
         File.WriteAllText(tagPath, hash);
     }
 
     public string? GetTag(string name)
     {
-        var tagPath = Path.Combine(_repoPath, ".kodecontrol", "refs", "tags", name);
+        var tagPath = Path.Combine(_repoPath, ".kontrolcode", "refs", "tags", name);
         if (!File.Exists(tagPath))
         {
             return null;
@@ -106,7 +106,7 @@ public class RefStore
 
     private string? GetRef(string refPath)
     {
-        var fullPath = Path.Combine(_repoPath, ".kodecontrol", refPath);
+        var fullPath = Path.Combine(_repoPath, ".kontrolcode", refPath);
         if (!File.Exists(fullPath))
         {
             return null;

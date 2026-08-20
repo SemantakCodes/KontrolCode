@@ -1,4 +1,4 @@
-namespace KodeControl.Commands;
+namespace KontrolCode.Commands;
 
 public interface ICommand
 {

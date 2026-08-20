@@ -1,9 +1,9 @@
-namespace KodeControl.Core.Storage;
+namespace KontrolCode.Core.Storage;
 
 using System.IO.Compression;
 using System.Text;
-using KodeControl.Utils;
-using KodeControl.Core.Models;
+using KontrolCode.Utils;
+using KontrolCode.Core.Models;
 
 public static class ObjectSerializer
 {

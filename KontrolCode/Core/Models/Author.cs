@@ -1,3 +1,3 @@
-namespace KodeControl.Core.Models;
+namespace KontrolCode.Core.Models;
 
 public record Author(string Name, string Email, DateTimeOffset When);

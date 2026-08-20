@@ -1,11 +1,11 @@
-namespace KodeControl.Commands;
+namespace KontrolCode.Commands;
 
-using KodeControl.Core;
+using KontrolCode.Core;
 
 public class InitCommand : ICommand
 {
     public string Name => "init";
-    public string Description => "Create an empty KodeControl repository";
+    public string Description => "Create an empty KontrolCode repository";
 
     public int Execute(string[] args)
     {
@@ -15,7 +15,7 @@ public class InitCommand : ICommand
         try
         {
             Repository.Create(fullPath);
-            Console.WriteLine($"Initialized empty KodeControl repository in {fullPath}/.kodecontrol/");
+            Console.WriteLine($"Initialized empty KontrolCode repository in {fullPath}/.kontrolcode/");
             return 0;
         }
         catch (Exception ex)

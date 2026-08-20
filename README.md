@@ -2,7 +2,7 @@
 
 A Git-like version control system implemented in C# on .NET 8.
 
-`KodeControl` is a from-scratch implementation of a subset of Git: it stores content-addressed objects in a `.kodecontrol/` directory, tracks branches under `refs/heads`, persists an index, and exposes a small command-line interface that mirrors Git's most common commands.
+`KontrolCode` is a from-scratch implementation of a subset of Git: it stores content-addressed objects in a `.kontrolcode/` directory, tracks branches under `refs/heads`, persists an index, and exposes a small command-line interface that mirrors Git's most common commands.
 
 ---
 
@@ -30,7 +30,7 @@ From the `KontrolCode/` directory:
 dotnet build
 ```
 
-The compiled binary lands at `KontrolCode/bin/Debug/net8.0/KodeControl` (or `KodeControl.exe` on Windows).
+The compiled binary lands at `KontrolCode/bin/Debug/net8.0/KontrolCode` (or `KontrolCode.exe` on Windows).
 
 ## Running
 
@@ -41,7 +41,7 @@ From the `KontrolCode/` directory:
 dotnet run -- <command> [args]
 
 # Or invoke the built executable directly
-./bin/Debug/net8.0/KodeControl <command> [args]
+./bin/Debug/net8.0/KontrolCode <command> [args]
 ```
 
 With no arguments, the binary prints a usage summary listing every registered command.
@@ -86,10 +86,10 @@ dotnet run -- checkout feature
 
 ## Repository layout
 
-When `init` runs, it creates `.kodecontrol/` inside the working directory:
+When `init` runs, it creates `.kontrolcode/` inside the working directory:
 
 ```
-.kodecontrol/
+.kontrolcode/
 ├── HEAD                  # Symbolic ref to the current branch ("ref: refs/heads/main")
 ├── config                # [user] name / email
 ├── index                 # JSON-serialized staging area
@@ -111,11 +111,11 @@ Objects use the standard Git header layout `<type> <byte-length>\0<content>` and
 | `tree` | `Tree(IReadOnlyList<TreeEntry>)` | Flat list of `(mode, name, hash)` entries (no subtrees yet) |
 | `commit` | `Commit(TreeHash, ParentHash?, Author, Message)` | Single parent, one author/committer line |
 
-The **index** is a `List<IndexEntry>` persisted as JSON to `.kodecontrol/index` — this is a simplification of Git's binary index format.
+The **index** is a `List<IndexEntry>` persisted as JSON to `.kontrolcode/index` — this is a simplification of Git's binary index format.
 
 ### Configuration
 
-`.kodecontrol/config` holds user identity (`name`, `email`) used when authoring commits. The `Config` class loads on repo open and writes back on save; defaults are `KodeControl User` / `user@mygit.local`.
+`.kontrolcode/config` holds user identity (`name`, `email`) used when authoring commits. The `Config` class loads on repo open and writes back on save; defaults are `KontrolCode User` / `user@kontrolcode.local`.
 
 ---
 
@@ -124,7 +124,7 @@ The **index** is a `List<IndexEntry>` persisted as JSON to `.kodecontrol/index` 
 ```
 KontrolCode/
 ├── Program.cs                 # Entry point: command registration, arg dispatch, usage printer
-├── KodeControl.csproj         # net8.0 console project (Nullable enabled, ImplicitUsings enabled)
+├── KontrolCode.csproj         # net8.0 console project (Nullable enabled, ImplicitUsings enabled)
 ├── Commands/                  # ICommand implementations, one per CLI verb
 │   ├── ICommand.cs
 │   ├── InitCommand.cs

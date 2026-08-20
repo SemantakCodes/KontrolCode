@@ -1,7 +1,7 @@
-namespace KodeControl.Core.Models;
+namespace KontrolCode.Core.Models;
 
 using System.Collections.Generic;
-using KodeControl.Core.Storage;
+using KontrolCode.Core.Storage;
 
 public record Tree(IReadOnlyList<TreeEntry> Entries) : GitObject
 {

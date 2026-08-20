@@ -1,4 +1,4 @@
-namespace KodeControl.Utils;
+namespace KontrolCode.Utils;
 
 using System.Security.Cryptography;
 using System.Text;

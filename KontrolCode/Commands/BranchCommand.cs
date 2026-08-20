@@ -1,6 +1,6 @@
-namespace KodeControl.Commands;
+namespace KontrolCode.Commands;
 
-using KodeControl.Core;
+using KontrolCode.Core;
 
 public class BranchCommand : ICommand
 {
@@ -103,7 +103,7 @@ public class BranchCommand : ICommand
 
     private int DeleteBranch(Repository repo, string name)
     {
-        var branchPath = Path.Combine(repo.RepoPath, ".kodecontrol", "refs", "heads", name);
+        var branchPath = Path.Combine(repo.RepoPath, ".kontrolcode", "refs", "heads", name);
 
         if (!File.Exists(branchPath))
         {

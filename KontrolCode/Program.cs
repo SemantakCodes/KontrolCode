@@ -1,4 +1,4 @@
-using KodeControl.Commands;
+using KontrolCode.Commands;
 
 var commands = new List<ICommand>
 {
@@ -33,7 +33,7 @@ return command.Execute(commandArgs);
 
 static void PrintUsage(List<ICommand> commands)
     {
-        Console.WriteLine("Usage: kodecontrol <command> [args...]");
+        Console.WriteLine("Usage: kontrolcode <command> [args...]");
         Console.WriteLine();
         Console.WriteLine("Commands:");
         foreach (var cmd in commands.OrderBy(c => c.Name))

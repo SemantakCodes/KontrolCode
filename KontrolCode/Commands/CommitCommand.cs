@@ -1,6 +1,6 @@
-namespace KodeControl.Commands;
+namespace KontrolCode.Commands;
 
-using KodeControl.Core;
+using KontrolCode.Core;
 
 public class CommitCommand : ICommand
 {
@@ -22,7 +22,7 @@ public class CommitCommand : ICommand
 
         if (string.IsNullOrEmpty(message))
         {
-            Console.Error.WriteLine("Usage: mygit commit -m <message>");
+            Console.Error.WriteLine("Usage: kontrolcode commit -m <message>");
             Console.Error.WriteLine("Error: Commit message required (-m)");
             return 1;
         }

@@ -1,6 +1,6 @@
-namespace KodeControl.Core.Models;
+namespace KontrolCode.Core.Models;
 
-using KodeControl.Core.Storage;
+using KontrolCode.Core.Storage;
 
 public record Commit(string TreeHash, string? ParentHash, Author Author, string Message) : GitObject
 {

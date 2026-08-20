@@ -1,6 +1,6 @@
-namespace KodeControl.Core.Models;
+namespace KontrolCode.Core.Models;
 
-using KodeControl.Core.Storage;
+using KontrolCode.Core.Storage;
 
 public record Blob(byte[] Content) : GitObject
 {

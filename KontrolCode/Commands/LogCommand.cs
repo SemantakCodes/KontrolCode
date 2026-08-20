@@ -1,7 +1,7 @@
-namespace KodeControl.Commands;
+namespace KontrolCode.Commands;
 
-using KodeControl.Core;
-using KodeControl.Core.Models;
+using KontrolCode.Core;
+using KontrolCode.Core.Models;
 
 public class LogCommand : ICommand
 {

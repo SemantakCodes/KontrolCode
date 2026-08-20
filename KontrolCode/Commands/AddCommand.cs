@@ -1,6 +1,6 @@
-namespace KodeControl.Commands;
+namespace KontrolCode.Commands;
 
-using KodeControl.Core;
+using KontrolCode.Core;
 
 public class AddCommand : ICommand
 {
@@ -11,7 +11,7 @@ public class AddCommand : ICommand
     {
         if (args.Length == 0)
         {
-            Console.Error.WriteLine("Usage: mygit add <file>...");
+            Console.Error.WriteLine("Usage: kontrolcode add <file>...");
             return 1;
         }
 

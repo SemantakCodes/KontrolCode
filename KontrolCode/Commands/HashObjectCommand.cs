@@ -1,7 +1,7 @@
-namespace KodeControl.Commands;
+namespace KontrolCode.Commands;
 
-using KodeControl.Core;
-using KodeControl.Core.Models;
+using KontrolCode.Core;
+using KontrolCode.Core.Models;
 
 public class HashObjectCommand : ICommand
 {
@@ -12,7 +12,7 @@ public class HashObjectCommand : ICommand
     {
         if (args.Length == 0)
         {
-            Console.Error.WriteLine("Usage: mygit hash-object <file> [-w]");
+            Console.Error.WriteLine("Usage: kontrolcode hash-object <file> [-w]");
             return 1;
         }
 

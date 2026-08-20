@@ -1,7 +1,7 @@
-namespace KodeControl.Core;
+namespace KontrolCode.Core;
 
 using System.Text.Json;
-using KodeControl.Core.Models;
+using KontrolCode.Core.Models;
 
 public class Index
 {
@@ -10,7 +10,7 @@ public class Index
 
     public Index(string repoPath)
     {
-        _indexPath = Path.Combine(repoPath, ".kodecontrol", "index");
+        _indexPath = Path.Combine(repoPath, ".kontrolcode", "index");
     }
 
     public static Index Load(string repoPath)

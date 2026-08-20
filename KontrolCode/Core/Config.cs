@@ -1,10 +1,10 @@
-namespace KodeControl.Core;
+namespace KontrolCode.Core;
 
 public class Config
 {
     private readonly string _configPath;
-    private string _userName = "KodeControl User";
-    private string _userEmail = "user@mygit.local";
+    private string _userName = "KontrolCode User";
+    private string _userEmail = "user@kontrolcode.local";
 
     public string UserName
     {
@@ -20,7 +20,7 @@ public class Config
 
     public Config(string repoPath)
     {
-        _configPath = Path.Combine(repoPath, ".kodecontrol", "config");
+        _configPath = Path.Combine(repoPath, ".kontrolcode", "config");
     }
 
     public static Config Load(string repoPath)

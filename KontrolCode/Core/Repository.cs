@@ -1,7 +1,7 @@
-namespace KodeControl.Core;
+namespace KontrolCode.Core;
 
 using System.Collections.Generic;
-using KodeControl.Core.Models;
+using KontrolCode.Core.Models;
 
 public class Repository
 {
@@ -22,9 +22,9 @@ public class Repository
 
     public static Repository Create(string repoPath)
     {
-        var mygitDir = Path.Combine(repoPath, ".kodecontrol");
-        var objectsDir = Path.Combine(mygitDir, "objects");
-        var refsDir = Path.Combine(mygitDir, "refs");
+        var kontrolcodeDir = Path.Combine(repoPath, ".kontrolcode");
+        var objectsDir = Path.Combine(kontrolcodeDir, "objects");
+        var refsDir = Path.Combine(kontrolcodeDir, "refs");
         var headsDir = Path.Combine(refsDir, "heads");
         var tagsDir = Path.Combine(refsDir, "tags");
 
@@ -32,7 +32,7 @@ public class Repository
         Directory.CreateDirectory(headsDir);
         Directory.CreateDirectory(tagsDir);
 
-        var headPath = Path.Combine(mygitDir, "HEAD");
+        var headPath = Path.Combine(kontrolcodeDir, "HEAD");
         File.WriteAllText(headPath, "ref: refs/heads/main");
 
         var config = new Config(repoPath);
@@ -46,10 +46,10 @@ public class Repository
 
     public static Repository Open(string repoPath)
     {
-        var mygitDir = Path.Combine(repoPath, ".kodecontrol");
-        if (!Directory.Exists(mygitDir))
+        var kontrolcodeDir = Path.Combine(repoPath, ".kontrolcode");
+        if (!Directory.Exists(kontrolcodeDir))
         {
-            throw new DirectoryNotFoundException($"Not a KodeControl repository: {repoPath}");
+            throw new DirectoryNotFoundException($"Not a KontrolCode repository: {repoPath}");
         }
         return new Repository(repoPath);
     }

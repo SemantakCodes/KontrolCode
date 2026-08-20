@@ -1,6 +1,6 @@
-namespace KodeControl.Commands;
+namespace KontrolCode.Commands;
 
-using KodeControl.Core;
+using KontrolCode.Core;
 
 public class CheckoutCommand : ICommand
 {
@@ -11,7 +11,7 @@ public class CheckoutCommand : ICommand
     {
         if (args.Length == 0)
         {
-            Console.Error.WriteLine("Usage: mygit checkout <branch|commit>");
+            Console.Error.WriteLine("Usage: kontrolcode checkout <branch|commit>");
             return 1;
         }
 

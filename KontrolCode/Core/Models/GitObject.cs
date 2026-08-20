@@ -1,8 +1,8 @@
-namespace KodeControl.Core.Models;
+namespace KontrolCode.Core.Models;
 
 using System.Text;
-using KodeControl.Utils;
-using KodeControl.Core.Storage;
+using KontrolCode.Utils;
+using KontrolCode.Core.Storage;
 
 public abstract record GitObject
 {

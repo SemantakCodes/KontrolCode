@@ -1,9 +1,9 @@
-namespace KodeControl.Core;
+namespace KontrolCode.Core;
 
 using System.Text;
-using KodeControl.Core.Models;
-using KodeControl.Core.Storage;
-using KodeControl.Utils;
+using KontrolCode.Core.Models;
+using KontrolCode.Core.Storage;
+using KontrolCode.Utils;
 
 public class ObjectStore
 {
@@ -11,7 +11,7 @@ public class ObjectStore
 
     public ObjectStore(string repoPath)
     {
-        ObjectsDir = Path.Combine(repoPath, ".kodecontrol", "objects");
+        ObjectsDir = Path.Combine(repoPath, ".kontrolcode", "objects");
         Directory.CreateDirectory(ObjectsDir);
     }
 
