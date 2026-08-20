@@ -1,4 +1,4 @@
-# KodeControl
+# KontrolCode
 
 A Git-like version control system implemented in C# on .NET 8.
 
