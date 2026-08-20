@@ -1,0 +1,31 @@
+# Build outputs
+bin/
+obj/
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Test results
+TestResults/
+*.trx
+
+# Logs
+*.log
+
+# User secrets
+secrets.json
+
+# Rider
+*.sln.DotSettings.user
